@@ -1,0 +1,12 @@
+# Ignore case when tab completing paths.
+set completion-ignore-case On
+
+# opt->/opt-< :: Move by word 
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+
+# opt-x :: Go to target folder of the last command and run ls
+"\ex": 'cd !$ \015ls\015'
+
+# opt-z :: Undo a directory change
+"\ez": 'cd -\015'

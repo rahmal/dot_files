@@ -1,2 +1,5 @@
 # dot_files
-My shell config files
+Rahmal's dot files.
+
+- Shell config files
+- Shell commandline scripts
