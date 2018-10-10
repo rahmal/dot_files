@@ -1,8 +1,11 @@
 # Tools.sh - Helper functions for bash shell
 
 function dot {
-  cp -R $1 ~/Projects/dot_files/.
+  path="$HOME/Projects/dot_files/."
+  cp -R $1 $path
+  cd $path
   ls -lah
+  gst
 }
 
 function branch {
@@ -56,7 +59,7 @@ function db {
   usage="USAGE: db <up|dn>"
 
   if [ -z "$1" ]; then
-    echo usage && return 1
+    echo $usage && return 1;
   fi
 
   case $1 in
@@ -154,4 +157,33 @@ OPTIONS\n
   fi
 
   dscacheutil -flushcache
+}
+
+function split {
+  str=$1
+  delim=$2
+  num=$3
+
+  if [ -z "$str" ]; then
+    echo "USAGE: split <string> [delim] [num]"
+    return 1;
+  fi
+
+  if [ -z "$delim" ]; then
+    delim=","
+  fi
+
+  if [ -z "$num" ]; then
+    num="1"
+  fi
+
+  echo [string=$str]
+  echo [delim=$delim]
+  echo [num=$num]
+
+  echo $str | awk '{split($0,a,"'$delim'"); print a['$num']}'
+}
+
+function show_usage {
+  $usage && return 1;
 }
