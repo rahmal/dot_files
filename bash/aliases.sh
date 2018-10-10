@@ -75,6 +75,13 @@ alias start='svc start'
 alias stop='svc stop'
 alias restart='svc restart'
 
+# Elixir Mix
+alias mixc='iex -S mix'
+alias mixup='PORT=4001 mix phx.server'
+
+# Ngrok Server
+alias grok='ngrok http 8080'
+
 # Clean-up Dead files and backups
 alias tidy='find * .* -prune \( -name "*~" -o -name ".*~" -o -name "%*" -o -name "*%" -o -name ".*%" -o -name "#*#"  -o -name "core" \) -exec rm {} \; -print'
 alias rmbak='find . -name "*.*~" | xargs rm && find . -name "*.swp" | xargs rm'

@@ -6,8 +6,14 @@ export PATH="$PATH:/usr/local/opt/postgresql/bin"         # PostgreSQL
 export PATH="$PATH:/usr/local/opt/mysql/bin"              # MySQL Server
 export PATH="$PATH:/usr/local/opt/mysql-client/bin:"      # MySQL Client
 export PATH="$PATH:/usr/local/opt/imagemagick/bin"        # ImageMagick
+export PATH="$PATH:/usr/local/opt/openssl/bin"            # OpenSSL
 export PATH="$PATH:/usr/local/opt/go/bin"                 # Go
 export PATH="$PATH:$GOPATH/bin"                           # Go (local)
+
+# For compilers and/or pkg-config to find openssl
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
 # Go Path
 export GOPATH="$HOME/go"
@@ -36,3 +42,4 @@ eval "$(rbenv init -)"
 for file in $(\ls -1 ${HOME}/bash/*.sh); do
   source $file;
 done
+
