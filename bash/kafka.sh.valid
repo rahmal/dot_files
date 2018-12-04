@@ -1,0 +1,22 @@
+#127.0.0.1
+#localhost
+export KAFKA_HOST_NAME="127.0.0.1"
+export KAFKA_PORT="9092"
+export KAFKA_ADVERTISED_LISTENERS="PLAINTEXT://127.0.0.1:9092"
+export KAFKA_LISTENERS="PLAINTEXT://127.0.0.1:9092"
+export KAFKA_URL="PLAINTEXT://127.0.0.1:9092"            # - advertised.listseners
+export KAFKA_kafka_URL="PLAINTEXT://127.0.0.1:9092"  # - listseners
+export KAFKA_ZOOKEEPER_URL="zookeeper://127.0.0.1:2181"  # - zookeeper.connect
+export KAFKA_AUTO_OFFSET_RESET="earliest"
+export KAFKA_CLIENT_ID="web"
+export KAFKA_DELIVERY_THRESHOLD="100"
+export KAFKA_DELIVERY_INTERVAL="5"
+export KAFKA_MAX_QUEUE_SIZE="4000"
+export KAFKA_MAX_BUFFER_SIZE="1000"
+export KAFKA_MAX_BUFFER_BYTESIZE="1000000"
+export KAFKA_CONSUMER_MAX_WAIT_TIME="5"
+export KAFKA_TRUSTED_CERT=`cat $HOME/.certs/kafka.trusted.cert`
+export KAFKA_CLIENT_CERT=`cat $HOME/.certs/kafka.client.cert`
+export KAFKA_CLIENT_CERT_KEY=`cat $HOME/.certs/kafka.client.cert.key`
+export CONSUMERS="*"
+
