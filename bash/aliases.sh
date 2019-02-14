@@ -76,8 +76,10 @@ alias stop='svc stop'
 alias restart='svc restart'
 
 # Elixir Mix
-alias mixc='iex -S mix'
+alias miex='iex -S mix'
+alias mixc='mix compile'
 alias mixup='PORT=4001 mix phx.server'
+alias mdeps='mix deps.get'
 
 # Ngrok Server
 alias grok='ngrok http 8080'

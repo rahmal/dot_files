@@ -11,9 +11,11 @@ export CRM_SALESFORCE_CLIENT_ID="3MVG9M6Iz6p_Vt2ySX3eTVn.6gNBW1GGAbvoyiXD9KI6QCO
 export CRM_SALESFORCE_REFRESH_TOKEN="5Aep861ZdNG8XtKaC4Z960KKM4b_.DQphkbLiRpwA8L9p29zmnZiqeAV9qeAasTvPb4eGxWwWrC6oZeteXKo879"
 export CRM_STREAMING_URL="https://therealreal--Staging.my.salesforce.com/cometd/42.0"
 
+# Encryptor
+export ENCRYPTOR_SECRET_TOKEN="09381ccf0e8fecbf05029b40ede82893458f274f3c8a7b7a33b3c59aadddd1123a08eed3f54c182133010dfa9e9b14b30388ffa8d8ef466301a3e85f23f2a7af"
+
 # Aliases
 alias api='cd $GOPATH/src/github.com/TheRealReal/therealreal-api'
-alias grok='ngrok http 8080'
 
 # Functions
 function gateway {
