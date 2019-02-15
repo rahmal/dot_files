@@ -1,2 +1,2 @@
 -d postgresql
--m $PROJECTS_PATH/kickoff/template.rb
+-m ../kickoff/template.rb

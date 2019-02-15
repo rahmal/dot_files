@@ -4,8 +4,8 @@
 alias ls='ls -G'
 alias ll='ls -lrth'
 alias la='ll -A'
-alias lll='ll|tail'
-alias lla='la|tail'
+alias lll='ll|less'
+alias lla='la|less'
 
 # vim
 alias vi='vim -p'

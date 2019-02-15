@@ -1,6 +1,43 @@
-.DS_Store
-*.*~
+# git config --global core.excludesfile '~/.gitignore_global'
+
+# Log files and temp files.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+# Library files
+/storage/*
+!/storage/.keep
+
+/node_modules
+/yarn-error.log
+
+/public/assets
+.byebug_history
+
+# Key/Secret files master key for decrypting credentials and more.
+/config/master.key
+/config/secrets.yml
+
+# Project files
+/.bundle
+/.idea
 *.sublime-project
 *.sublime-workspace
-.bundle
-.idea
+
+# Backup files
+*.*~
+*.swp
+
+# Dot-files
+.DS_Store
+.powenv
+.powrc
+.rbenv-vars
+.rspec-local
+.ruby-gemset
+.rbenv-gemsets
+.rvmrc
+.zeus.sock
+.env.local
