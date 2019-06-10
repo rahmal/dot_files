@@ -9,6 +9,7 @@ export PATH="$PATH:/usr/local/opt/imagemagick/bin"        # ImageMagick
 export PATH="$PATH:/usr/local/opt/openssl/bin"            # OpenSSL
 export PATH="$PATH:/usr/local/opt/go/bin"                 # Go
 export PATH="$PATH:$GOPATH/bin"                           # Go (local)
+export PATH="$PATH:/usr/local/pmd/bin"                    # PMD
 
 # For compilers and/or pkg-config to find openssl
 export LDFLAGS="-L/usr/local/opt/openssl/lib"

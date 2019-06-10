@@ -26,6 +26,9 @@
 *.sublime-project
 *.sublime-workspace
 
+# Config files
+kafka.sh
+
 # Backup files
 *.*~
 *.swp
@@ -41,3 +44,4 @@
 .rvmrc
 .zeus.sock
 .env.local
+.tools-versions

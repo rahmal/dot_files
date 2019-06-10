@@ -48,6 +48,7 @@ alias bo='bundle open'
 alias rs='be rails s'
 alias rg='be rails g'
 alias rc='be rails c'
+alias rgm='rg migration'
 alias rake='be rake'
 alias spec='RAILS_ENV=test be rspec'
 alias cuc='be cucumber'
@@ -60,7 +61,7 @@ alias dbd='rake db:drop'
 alias dbc='rake db:create'
 alias dbm='rake db:migrate'
 alias dbs='rake db:seed'
-alias dba='dbd; dbc && dbm && dbs'
+alias dba='dbd && dbc && dbm'
 
 alias pg='pg_ctl -D /usr/local/var/postgres'
 
@@ -74,6 +75,7 @@ alias svc='brew services'
 alias start='svc start'
 alias stop='svc stop'
 alias restart='svc restart'
+alias status='svc list'
 
 # Elixir Mix
 alias miex='iex -S mix'
@@ -91,3 +93,6 @@ alias rmbak='find . -name "*.*~" | xargs rm && find . -name "*.swp" | xargs rm'
 # MySQL Client
 alias int='install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib /Users/rahmal/.rvm/gems/ruby-1.9.3-p392/gems/mysql2-0.3.13/lib/mysql2/mysql2.bundle'
 
+alias ff='find . -name'
+alias pow='powder'
+alias pst='pow restart'
