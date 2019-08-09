@@ -96,3 +96,4 @@ alias int='install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/li
 alias ff='find . -name'
 alias pow='powder'
 alias pst='pow restart'
+alias bfg='java -jar $HOME/bin/bfg.jar'
