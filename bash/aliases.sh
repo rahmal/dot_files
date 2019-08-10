@@ -93,7 +93,10 @@ alias rmbak='find . -name "*.*~" | xargs rm && find . -name "*.swp" | xargs rm'
 # MySQL Client
 alias int='install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib /Users/rahmal/.rvm/gems/ruby-1.9.3-p392/gems/mysql2-0.3.13/lib/mysql2/mysql2.bundle'
 
-alias ff='find . -name'
+# Pow Server
 alias pow='powder'
 alias pst='pow restart'
+
+# Misc.
+alias ff='find . -name'
 alias bfg='java -jar $HOME/bin/bfg.jar'
