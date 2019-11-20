@@ -45,9 +45,10 @@ alias bs='bundle show'
 alias bo='bundle open'
 
 # Rails
-alias rs='be rails s'
-alias rg='be rails g'
-alias rc='be rails c'
+alias rails='be rails'
+alias rs='rails s'
+alias rg='rails g'
+alias rc='rails c'
 alias rgm='rg migration'
 alias rake='be rake'
 alias spec='RAILS_ENV=test be rspec'

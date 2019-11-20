@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/private/etc/sudoers.d'
-let g:netrw_dirhist_2='/Users/rahmal/Projects/DevBootcamp/sinatra-mvc-skeleton'
-let g:netrw_dirhist_3='/Users/rahmal/Projects/DevBootcamp/sinatra-mvc-skeleton/config'
-let g:netrw_dirhist_4='/Users/rahmal.conda/Projects/trr/api/apps/pagination/lib/pagination'
-let g:netrw_dirhist_5='/Users/rahmal.conda/Projects/eai'
-let g:netrw_dirhist_6='/Users/rahmal.conda/Projects'
-let g:netrw_dirhist_7='/Users/rahmal.conda/Projects/eai'
-let g:netrw_dirhist_8='/Users/rahmal.conda/Projects/dot_files'
-let g:netrw_dirhist_9='/Users/rahmal.conda/Projects/eai/Rails/eai_audit1'
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/rahmalconda/Projects/dot_files/.vim/bundle/Vundle.vim'
