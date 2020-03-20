@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# A hook to run pronto prior to pushing
+# Place in {Rails.root}/.git/hooks
+
+remote="$1"
+url="$2"
+
+pronto_output=$(pronto run)
+
+if [ $(echo "$pronto_output" | wc -w) -gt 0 ]; then
+  echo "$pronto_output"
+  read -n 1 -p $'\033[0;31mYou\'ve got some style violations. Continue with push? [y/N]\033[0m ' cont < /dev/tty
+  echo
+  if [[ "$cont" =~ (y|Y) ]]; then
+    echo 'Continuing with push'
+    exit 0
+  fi
+  exit 1
+fi

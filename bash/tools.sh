@@ -19,7 +19,7 @@ OPTIONS\n
 \t-c\t\tStory type is chore\n\n
 \t-h,--help\tDisplay help/usage\n
 PARAMS\n
-\tsid \t\tStory ID number (Must be 9 digits)\n
+\tsid \t\tStory ID number (Must be 4 digits)\n
 \tname\t\tBranch name\n"
 
   stype="feature"
@@ -27,7 +27,7 @@ PARAMS\n
   sid=""
 
   while [ "$1" != "" ]; do
-    if [[ $1 =~ ^[0-9]{9}$ ]]; then
+    if [[ $1 =~ ^[0-9]{3,4}$ ]]; then
       sid="$1"
     elif [[ "$1" == "--help" ]]; then
         $usage && return 1;
@@ -48,7 +48,7 @@ PARAMS\n
     $usage && return 1;
   fi
 
-  branch="$stype/$sid-$sname"
+  branch="RETURN-$sid-$sname"
   echo "branch: $branch"
   gcm
   gcb $branch

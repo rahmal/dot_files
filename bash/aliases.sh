@@ -20,7 +20,7 @@ alias gpg='gpg --use-agent'
 alias copy='xsel -ib'
 alias paste='xsel -b'
 alias last-arg='echo $(ls -1tr | tail -1)'
-alias ack='ack --ignore-dir=log --ignore-dir=vendor --ignore-dir=test --ignore-dir=spec'
+alias ack='ack --ignore-dir=.virtualenvs --ignore-dir=log --ignore-dir=vendor --ignore-dir=test --ignore-dir=spec --ignore-dir=images'
 alias tz='tar -zxf'
 alias ping='ping -c4'
 alias kill='sudo kill -9'
@@ -67,7 +67,7 @@ alias dba='dbd && dbc && dbm'
 alias pg='pg_ctl -D /usr/local/var/postgres'
 
 # Source/Bind
-alias src='source ~/.profile'
+alias src='source ~/.bash_profile'
 alias inp='bind -f ~/.inputrc'
 alias refresh='src && inp'
 
@@ -92,7 +92,8 @@ alias tidy='find * .* -prune \( -name "*~" -o -name ".*~" -o -name "%*" -o -name
 alias rmbak='find . -name "*.*~" | xargs rm && find . -name "*.swp" | xargs rm'
 
 # MySQL Client
-alias int='install_name_tool -change libmysqlclient.18.dylib /usr/local/mysql/lib/libmysqlclient.18.dylib /Users/rahmal/.rvm/gems/ruby-1.9.3-p392/gems/mysql2-0.3.13/lib/mysql2/mysql2.bundle'
+alias mysql='mysql -uroot'
+alias int='install_name_tool -change libmysqlclient.21.dylib /usr/local/mysql/lib/libmysqlclient.21.dylib /Users/rahmal/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/mysql2-0.4.10/lib/mysql2/mysql2.bundle'
 
 # Pow Server
 alias pow='powder'
