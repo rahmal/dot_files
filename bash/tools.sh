@@ -81,8 +81,8 @@ function gdb {
   elif [ -n "$1" ]; then
     b2="$1"
   fi
- echo "[$b1]..[$b2]"
- git diff --name-status $b1..$b2
+ echo "[$b1] -- [$b2]"
+ gd --name-status $b1 $b2
 }
 
 function running {

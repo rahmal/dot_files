@@ -36,9 +36,9 @@ set list
 set listchars=tab:>=,trail:~,extends:>,precedes:<,nbsp:.
 set wildmenu              " Make file/command completion useful
 set wildmode=longest,full " Show a wildmenu when try to find a command or file
-set diffopt+=iwhite       " ignore whitespace in diff mode
-set grepprg=ack           "ACK integration
-set grepformat=%f:%l:%m   "ACK format
+set diffopt=iwhite       " ignore whitespace in diff mode
+set grepprg=ack           " ACK integration
+set grepformat=%f:%l:%m   " ACK format
 
 :set cpoptions+=$      " puts a $ marker for the end of words/lines in cw/c$ commands
 
