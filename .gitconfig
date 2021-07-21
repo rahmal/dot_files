@@ -1,6 +1,6 @@
 [user]
-  name  = Rahmal Conda
-  email = rahmal@gmail.com
+	name = Rahmal Conda
+	email = rahmal@gmail.com
 [push]
   default = matching
 [core]

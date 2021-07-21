@@ -10,7 +10,7 @@ function dot {
 
 function branch {
   usage="echo -e \n
-USAGE: branch [OPTIONS] <sid> <name>\n
+USAGE: branch [OPTIONS] [sid] <name>\n
 DESCRIPTION\n
 \tSets up a new git development branch as a child of master, based on the options provided.\n
 OPTIONS\n
@@ -22,20 +22,22 @@ PARAMS\n
 \tsid \t\tStory ID number (Must be 4 digits)\n
 \tname\t\tBranch name\n"
 
+  parent=""
   stype="feature"
   sname=""
   sid=""
 
   while [ "$1" != "" ]; do
-    if [[ $1 =~ ^[0-9]{3,4}$ ]]; then
+    if [[ $1 =~ ^[0-9]{2,4}$ ]]; then
       sid="$1"
     elif [[ "$1" == "--help" ]]; then
         $usage && return 1;
-    elif [[ "$1" =~ ^-[h|f|b|c]$ ]]; then
+    elif [[ "$1" =~ ^-[h|f|b|c|p]$ ]]; then
       case $1 in
         -f) stype="feature" ;;
         -b) stype="bug"     ;;
         -c) stype="chore"   ;;
+        -p) parent="$2"     ;;
         -h) $usage && return 1;
       esac
     else
@@ -44,13 +46,24 @@ PARAMS\n
     shift
   done
 
-  if [[ -z $stype || -z $sid || -z $sname ]]; then
+  # if [[ -z $stype || -z $sid || -z $sname ]]; then  - old
+  if [[ -z $sname ]]; then
     $usage && return 1;
   fi
 
-  branch="RETURN-$sid-$sname"
+  if [[ -z $sid ]]; then
+    branch="$sname"
+  else
+    branch="$sid-$sname"
+  fi
+
   echo "branch: $branch"
   gcm
+
+  if [[ -n $parent ]]; then
+    gco $parent
+  fi
+
   gcb $branch
   gpu $branch
 }

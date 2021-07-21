@@ -1,33 +1,33 @@
 # git config --global core.excludesfile '~/.gitignore_global'
 
+
+# Dependencies
+/node_modules
+/public/assets
+/.pnp
+.pnp.js
+/storage/*
+!/storage/.keep
+
+# testing
+/coverage
+
+# production
+/build
+
 # Log files and temp files.
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
-# Library files
-/storage/*
-!/storage/.keep
-
-/node_modules
 /yarn-error.log
-
-/public/assets
 .byebug_history
-
-# Key/Secret files master key for decrypting credentials and more.
-/config/master.key
-/config/secrets.yml
 
 # Project files
 /.bundle
 /.idea
 *.sublime-project
 *.sublime-workspace
-
-# Config files
-kafka.sh
 
 # Backup files
 *.*~

@@ -31,13 +31,13 @@ alias init='gaa && gc "Initial commit"'
 
 function cmt {
   sid=`story_id`
-  msg="[RETURN-$sid] $1"
+  msg="[$sid] $1"
   gc "$msg"
 }
 
 function story_id {
   #story_name | awk '{split($0,a,"-"); print a[1]}'
-  branch_name | awk '{split($0,a,"-"); print a[2]}'
+  branch_name | awk '{split($0,a,"-"); print a[1]}'
 }
 
 #function story_type {
@@ -46,7 +46,7 @@ function story_id {
 
 function story_name {
   #branch_path | awk '{split($0,a," "); print a[2]}'
-  branch_name | awk '{split($0,a,"-"); print a[3],a[4],a[5],a[6],a[7],a[8],a[9],a[10],a[11]}'
+  branch_name | awk '{split($0,a,"-"); print a[2],a[3],a[5],a[6],a[7],a[8],a[9],a[10],a[11]}'
 }
 
 #function branch_path {

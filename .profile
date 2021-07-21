@@ -10,17 +10,18 @@ export PATH="$PATH:/usr/local/opt/openssl/bin"            # OpenSSL
 export PATH="$PATH:/usr/local/opt/go/bin"                 # Go
 export PATH="$PATH:$GOPATH/bin"                           # Go (local)
 export PATH="$PATH:/usr/local/pmd/bin"                    # PMD
+export PATH="$PATH:$PYENV_ROOT/bin:$PYENV_PATH/bin"       # Python
 
-# For compilers and/or pkg-config to find openssl
+# For compilers to find openssl
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
-export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
-# Projects Path
-export PROJECTS_PATH="$HOME/Projects"
-
-# Go Path
+# Paths
 export GOPATH="$HOME/go"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+export PROJECTS_PATH="$HOME/Projects"
+export PYENV_PATH="/Library/Frameworks/Python.framework/Versions/3.7"
+export PYENV_ROOT="$HOME/.pyenv"
 
 # E-mail to use in dev environments
 export DEV_EMAIL="rahmal@gmail.com"
@@ -31,17 +32,21 @@ export EDITOR=mvim
 # Disable Rack Debug for rails apps
 export NO_RACK_DEBUG=true
 
-# don't put duplicate lines in the history.
+# Don't put duplicate lines in the history.
 export HISTCONTROL=ignoreboth
 
-# append to the history file, don't overwrite it
+# Stop deprecation warnings.
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Append to the history file, don't overwrite it
 shopt -s histappend
 
 # Hostname
 export HOSTNAME_SHORT=`hostname -s`
 
-# rbenv
+# rbenv & pyenv
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
 
 for file in $(\ls -1 ${HOME}/bash/*.sh); do
   source $file;
