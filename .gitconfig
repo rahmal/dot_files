@@ -3,6 +3,8 @@
 	email = rahmal@gmail.com
 [push]
   default = matching
+[pull]
+  rebase = false
 [core]
   excludesfile = ~/.gitignore_global
 [filter "lfs"]
