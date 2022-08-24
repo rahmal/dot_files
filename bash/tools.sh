@@ -46,16 +46,16 @@ PARAMS\n
     shift
   done
 
-  # if [[ -z $stype || -z $sid || -z $sname ]]; then  - old
-  if [[ -z $sname ]]; then
+  if [[ -z $stype || -z $sid || -z $sname ]]; then
+  #if [[ -z $sname ]]; then
     $usage && return 1;
   fi
 
-  if [[ -z $sid ]]; then
-    branch="$sname"
-  else
-    branch="$sid-$sname"
-  fi
+  #if [[ -z $sid ]]; then
+  #  branch="$sname"
+  #else
+    branch="TS-$sid-$sname"
+  #fi
 
   echo "branch: $branch"
   gcm

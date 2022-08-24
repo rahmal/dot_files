@@ -12,6 +12,8 @@ export PATH="$PATH:$GOPATH/bin"                           # Go (local)
 export PATH="$PATH:/usr/local/pmd/bin"                    # PMD
 export PATH="$PATH:$PYENV_ROOT/bin:$PYENV_PATH/bin"       # Python
 
+export SHELL='bash'
+
 # For compilers to find openssl
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
@@ -52,3 +54,6 @@ for file in $(\ls -1 ${HOME}/bash/*.sh); do
   source $file;
 done
 
+source ${HOME}/bash/iterm2_shell_integration.sh
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

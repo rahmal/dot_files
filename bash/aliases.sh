@@ -32,11 +32,10 @@ alias rf='rm -rf'
 
 # Ruby aliases
 alias use='rvm use'
-alias rd='use default'
-alias gs='rvm gemset'
+alias ud='use default'
+alias gs='g stash'
 alias gsl='gs list'
-alias gsu='gs use'
-alias gsc='gs create'
+alias gsp='gs pop'
 
 alias gi='gem install'
 alias gui='gem uninstall'
@@ -101,6 +100,13 @@ alias int='install_name_tool -change libmysqlclient.21.dylib /usr/local/mysql/li
 # Pow Server
 alias pow='powder'
 alias pst='pow restart'
+
+# Docker
+alias d='docker'
+alias dc='docker-compose'
+alias dcu='dc up -d'
+alias dcd='dc down'
+alias dcb='dc exec app bash'
 
 # Misc.
 alias ff='find . -name'
