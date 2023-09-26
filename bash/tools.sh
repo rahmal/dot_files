@@ -8,72 +8,8 @@ function dot {
   gst
 }
 
-function branch {
-  usage="echo -e \n
-USAGE: branch [OPTIONS] [sid] <name>\n
-DESCRIPTION\n
-\tSets up a new git development branch as a child of master, based on the options provided.\n
-OPTIONS\n
-\t-f\t\tStory type is feature (Default)\n
-\t-b\t\tStory type is bug\n
-\t-c\t\tStory type is chore\n\n
-\t-h,--help\tDisplay help/usage\n
-PARAMS\n
-\tsid \t\tStory ID number (Must be 4 digits)\n
-\tname\t\tBranch name\n"
-
-  parent=""
-  stype="feature"
-  sname=""
-  sid=""
-
-  while [ "$1" != "" ]; do
-    if [[ $1 =~ ^[0-9]{2,4}$ ]]; then
-      sid="$1"
-    elif [[ "$1" == "--help" ]]; then
-        $usage && return 1;
-    elif [[ "$1" =~ ^-[h|f|b|c|p]$ ]]; then
-      case $1 in
-        -f) stype="feature" ;;
-        -b) stype="bug"     ;;
-        -c) stype="chore"   ;;
-        -p) parent="$2"     ;;
-        -h) $usage && return 1;
-      esac
-    else
-      sname="$1"
-    fi
-    shift
-  done
-
-  if [[ -z $stype || -z $sid || -z $sname ]]; then
-  #if [[ -z $sname ]]; then
-    $usage && return 1;
-  fi
-
-  #if [[ -z $sid ]]; then
-  #  branch="$sname"
-  #else
-    branch="TS-$sid-$sname"
-  #fi
-
-  echo "branch: $branch"
-  gcm
-
-  if [[ -n $parent ]]; then
-    gco $parent
-  fi
-
-  gcb $branch
-  gpu $branch
-}
-
 function db {
-  usage="USAGE: db <up|dn>"
-
-  if [ -z "$1" ]; then
-    echo $usage && return 1;
-  fi
+  usage="echo -e USAGE: db <up|dn>"
 
   case $1 in
     u|up) dbd; dbc && dbm && dbs ;;
@@ -81,49 +17,16 @@ function db {
     c|cr|create) dbc ;;
     m|mg|migrate) dbm ;;
     seed) dbs ;;
-    *) echo $usage && return 1 ;;
+    *) $usage && return 1 ;;
   esac
 }
 
-function gdb {
-  b1="master"
-  b2=`gb | grep "*" | awk '{print $2}'`
-  if [ -n "$2" ]; then
-    b1="$1"
-    b2="$2"
-  elif [ -n "$1" ]; then
-    b2="$1"
-  fi
- echo "[$b1] -- [$b2]"
- gd --name-status $b1 $b2
+function upper-case {
+  echo $1 | tr '[:lower:]' '[:upper:]'
 }
 
-function running {
-  if [ -z "$1" ]; then
-    echo "usage: running <processname>";
-    return 1;
-  fi
-  ps aux | grep $1 | grep -v grep
-}
-
-function pgrep {
-  if [ -z "$1" ]; then
-    echo "usage: pgrep <processname>";
-    return 1;
-  fi
-  ps aux | grep $1 | grep -v grep | awk '{print $2}'
-}
-
-function pkill {
-  if [ -z "$1" ]; then
-    echo "usage: pkill <processname>";
-    return 1;
-  fi
-  pid=`pgrep $1`;
-  echo "Killing ${pid}..."
-  if [ -n "$pid" ]; then
-    kill $pid
-  fi
+function lower-case {
+  echo $1 | tr '[:upper:]' '[:lower:]'
 }
 
 function hn {
@@ -197,6 +100,23 @@ function split {
   echo $str | awk '{split($0,a,"'$delim'"); print a['$num']}'
 }
 
-function show_usage {
-  $usage && return 1;
+function say.halt {
+  local reason="$1"
+  local hint="$2"
+  # echo -e "\e[1;31mERROR: ${reason}. Aborting." >&2
+  red "ERROR: ${reason}. Aborting. "
+  # [[ -n ${hint} ]] && echo -e "\e[1;43m HINT: ${hint}" >&2
+  [[ -n ${hint} ]] && blue "`bg-yellow " (HINT: ${hint})\n"`"
+  # exit 1
+}
+
+function say.okay {
+  local reason="$1"
+  green " [ ✔︎ ] ${reason}"
+}
+
+function say {
+  local reason="$1"
+  magenta " [ ➔ ] "
+  blue "${reason}"
 }

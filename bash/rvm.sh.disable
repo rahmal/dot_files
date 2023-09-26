@@ -2,7 +2,7 @@
 
 RVM_HOME=$HOME/.rvm
 RVM_SCRIPTS=$RVM_HOME/scripts/rvm
-PATH=$RVM_HOME/bin:$PATH
+PATH=$PATH:$RVM_HOME/bin
 
 if [ -x "$RVM_SCRIPTS" ]; then
     source ${RVM_SCRIPTS}

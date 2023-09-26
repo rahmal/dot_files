@@ -28,7 +28,7 @@ alias mkdir='mkdir -p'
 alias ...='../..'
 alias vp='vim ~/.profile && source ~/.profile'
 alias hosts='sudo vim /etc/hosts'
-alias rf='rm -rf'
+alias rd='rm -rf'
 
 # Ruby aliases
 alias use='rvm use'
@@ -36,8 +36,11 @@ alias ud='use default'
 alias gs='g stash'
 alias gsl='gs list'
 alias gsp='gs pop'
+alias srb='be srb'
+alias sr='srb tc'
+alias rbi='./sorbet/rbi_gen.sh'
 
-alias gi='gem install'
+alias gmi='gem install'
 alias gui='gem uninstall'
 
 alias b='bundle'
