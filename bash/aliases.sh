@@ -31,7 +31,7 @@ alias hosts='sudo vim /etc/hosts'
 alias rd='rm -rf'
 
 # Source/Bind
-alias src='source ~/.bash_profile'
+alias src='source ~/.profile'
 alias inp='bind -f ~/.inputrc'
 alias refresh='src && inp'
 
