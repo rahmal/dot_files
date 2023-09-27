@@ -1,8 +1,6 @@
 # Source Homebrew's completion definitions to make them available in bash.
 
 if type brew &>/dev/null; then
-  eval "$($BREW_BIN/brew shellenv)"
-
   export BREW_PREFIX="$(brew --prefix)";
   export BREW_CELLAR="$(brew --cellar)";
   export BREW_REPOSITORY="$(brew --repo)";
@@ -41,6 +39,8 @@ if type brew &>/dev/null; then
       [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
     done
   fi
+
+  eval "$($BREW_BIN/brew shellenv)"
 
   # Brew Services
   alias svc='brew services'

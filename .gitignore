@@ -32,6 +32,7 @@
 # Backup files
 *.*~
 *.swp
+__pycache__
 
 # Dot-files
 .DS_Store
