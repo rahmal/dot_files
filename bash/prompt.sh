@@ -34,7 +34,8 @@ prompt_function() {
     git_color="${RED}"
   fi
 
-  PS1="${RESET}${BROWN}\u@${HOSTNAME_SHORT}:${CYAN} \w${git_color}$(__git_ps1)${RESET} |> "
+  PS1="${RESET}${BROWN}\u@${HOSTNAME_SHORT}:${CYAN} [\W]${git_color}$(__git_ps1)${RESET} |> "
+
   history -a
 }
 PROMPT_COMMAND=prompt_function
