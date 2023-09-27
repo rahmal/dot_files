@@ -30,67 +30,10 @@ alias vp='vim ~/.profile && source ~/.profile'
 alias hosts='sudo vim /etc/hosts'
 alias rd='rm -rf'
 
-# Ruby aliases
-alias use='rvm use'
-alias ud='use default'
-alias gs='g stash'
-alias gsl='gs list'
-alias gsp='gs pop'
-alias srb='be srb'
-alias sr='srb tc'
-alias rbi='./sorbet/rbi_gen.sh'
-
-alias gmi='gem install'
-alias gui='gem uninstall'
-
-alias b='bundle'
-alias be='b exec'
-alias bs='b show'
-alias bo='b open'
-
-# Rails
-alias rails='be rails'
-alias rs='rails s'
-alias rg='rails g'
-alias rc='rails c'
-alias rgm='rg migration'
-alias rake='be rake'
-alias rackup='be rackup'
-alias spec='RAILS_ENV=test be rspec'
-alias cuc='be cucumber'
-alias apc='RAILS_ENV=production rake assets:precompile'
-alias deploy='cap deploy'
-alias lg='tail -f log/development.log'
-
-# Rails DB
-alias dbd='rake db:drop'
-alias dbc='rake db:create'
-alias dbm='rake db:migrate'
-alias dbs='rake db:seed'
-alias dba='dbd && dbc && dbm'
-
-alias pg='pg_ctl -D /usr/local/var/postgres'
-
 # Source/Bind
 alias src='source ~/.bash_profile'
 alias inp='bind -f ~/.inputrc'
 alias refresh='src && inp'
-
-# Brew Services
-alias svc='brew services'
-alias start='svc start'
-alias stop='svc stop'
-alias restart='svc restart'
-alias status='svc list'
-
-# Elixir Mix
-alias miex='iex -S mix'
-alias mixc='mix compile'
-alias mixup='PORT=4001 mix phx.server'
-alias mdeps='mix deps.get'
-
-# Ngrok Server
-alias grok='ngrok http 8080'
 
 # Clean-up Dead files and backups
 alias tidy='find * .* -prune \( -name "*~" -o -name ".*~" -o -name "%*" -o -name "*%" -o -name ".*%" -o -name "#*#"  -o -name "core" \) -exec rm {} \; -print'
@@ -98,19 +41,11 @@ alias rmbak='find . -name "*.*~" | xargs rm && find . -name "*.swp" | xargs rm'
 
 # MySQL Client
 alias mysql='mysql -uroot'
-alias int='install_name_tool -change libmysqlclient.21.dylib /usr/local/mysql/lib/libmysqlclient.21.dylib /Users/rahmal/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/mysql2-0.4.10/lib/mysql2/mysql2.bundle'
 
 # Pow Server
 alias pow='powder'
 alias pst='pow restart'
 
-# Docker
-alias d='docker'
-alias dc='docker-compose'
-alias dcu='dc up -d'
-alias dcd='dc down'
-alias dcb='dc exec app bash'
-
 # Misc.
 alias ff='find . -name'
-alias bfg='java -jar $HOME/bin/bfg.jar'
+alias bfg='java -jar $HOME/bin/bfg.jar' # BFG Repo-Cleaner

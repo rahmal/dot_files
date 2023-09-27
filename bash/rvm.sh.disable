@@ -7,3 +7,6 @@ PATH=$PATH:$RVM_HOME/bin
 if [ -x "$RVM_SCRIPTS" ]; then
     source ${RVM_SCRIPTS}
 fi
+
+alias use='rvm use'
+alias ud='use default'
