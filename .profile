@@ -22,6 +22,9 @@ export HISTCONTROL=ignoreboth
 # Stop deprecation warnings.
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+# Open JDK
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+
 # Append to the history file, don't overwrite it
 shopt -s histappend
 

@@ -11,7 +11,11 @@ alias lla='la|less'
 alias vi='vim -p'
 alias vim='mvim'
 
+# JS/Node
+alias npi='npm i'
+
 # Misc Utils
+alias a='sudo apachectl'
 alias syslogs='tail -f /var/log/syslog'
 alias sl='syslogs'
 alias more='less'

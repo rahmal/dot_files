@@ -1,0 +1,5 @@
+# Airbyte CREDENTIALS
+export ABCTL_LOCAL_INSTALL_USERNAME="airbyte"
+export ABCTL_LOCAL_INSTALL_PASSWORD="p@ssw0rd"
+
+# Airbyte CONFIG
