@@ -9,7 +9,7 @@ alias lla='la|less'
 
 # vim
 alias vi='vim -p'
-alias vim='mvim'
+alias vim='nvim'
 
 # JS/Node
 alias npi='npm i'
@@ -53,3 +53,6 @@ alias pst='pow restart'
 # Misc.
 alias ff='find . -name'
 alias bfg='java -jar $HOME/bin/bfg.jar' # BFG Repo-Cleaner
+
+alias direnv='/opt/homebrew/bin/direnv'
+alias python='python3'

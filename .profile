@@ -1,5 +1,5 @@
 # Paths
-export PATH="$PATH:/Applications/MacVim.app/Contents/bin" # MacVim
+export PATH="$PATH:/opt/homebrew/bin"
 
 # Local Bins
 export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:$PATH"
@@ -35,3 +35,5 @@ for file in $(\ls -1 ${HOME}/bash/*.sh); do
   source $file;
   [[ -r $file ]] && source $file;
 done
+
+

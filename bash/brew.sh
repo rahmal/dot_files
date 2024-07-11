@@ -6,7 +6,7 @@ if type brew &>/dev/null; then
   export BREW_REPOSITORY="$(brew --repo)";
 
   export BREW_HOME="$BREW_CELLAR";
-  export BREW_PATH="$BREW_PREFIX/Homebrew";
+  export BREW_PATH="$BREW_PREFIX";
   export BREW_BIN="$BREW_PATH/bin";
   export BREW_SHARE="$BREW_PATH/share";
 
