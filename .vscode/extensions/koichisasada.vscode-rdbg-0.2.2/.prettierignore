@@ -1,6 +1,0 @@
-out/
-.vscode-test/
-test-resources/
-*.md
-*.yml
-*.yaml
