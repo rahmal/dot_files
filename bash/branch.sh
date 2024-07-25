@@ -1,4 +1,4 @@
-source "$HOME/bash/git.sh"
+source "$BASH_DIR/git.sh"
 
 alias current_branch='branch_name'
 alias curb='branch_name'
@@ -45,7 +45,7 @@ function branch {
 
 function diff_branch {
   usage="echo -e diff_branch [-n|s|w] [-b1 branch1] [-b2 branch2]"
-  branch1="main"
+  branch1="$GIT_ROOT"
   branch2=`current_branch`
   flag=""
 
@@ -76,7 +76,7 @@ function diff_branch {
 }
 
 function gdb {
-  branch1="main"
+  branch1="$GIT_ROOT"
   branch2=`current_branch`
 
   if [ -n "$2" ]; then
@@ -90,7 +90,7 @@ function gdb {
 }
 
 function gdbs {
-  branch1="main"
+  branch1="$GIT_ROOT"
   branch2=`current_branch`
 
   if [ -n "$2" ]; then
@@ -124,31 +124,31 @@ function branch_name {
 
 function branch-usage {
   usage="echo -e \n
-    USAGE:\n
-      \t branch [OPTIONS] <jira> <name>\n\n
-    DESCRIPTION\n
-      \t Sets up a new git development branch as a child of main or the branch provided.\n\n
-    OPTIONS\n
-      \t -p <branch> \t Use <branch> as parent of target\n
-      \t -h,--help   \t Display help/usage\n\n
-    PARAMS\n
+    USAGE:       \n
+      \t branch [OPTIONS] <jira> <name> \n\n
+    DESCRIPTION  \n
+      \t Sets up a new git development branch as a child of $GIT_ROOT  or the branch provided. \n\n
+    OPTIONS      \n
+      \t -p <branch> \t Use <branch> as parent of target    \n
+      \t -h,--help   \t Display help/usage                  \n\n
+    PARAMS       \n
       \t jira \t Jira project and ID number (i.e. BOSS-123) \n
       \t name \t The text to use as branch name             \n"
 }
 
 function diff-usage {
   usage="echo -e \n
-    USAGE:\n
+    USAGE:       \n
       \t diff_branch [OPTIONS] [-b1 branch1] [-b2 branch2] \n\n
-    DESCRIPTION\n
+    DESCRIPTION  \n
       \t Show changes/differences in compared files of each branch. \n
-      \t Or if specified, list the changed files. \n\n
-    OPTIONS\n
+      \t Or if specified, list the changed files.                   \n\n
+    OPTIONS      \n
       \t -n,--name \t List file names only             \n
       \t -s,--status \t List file name and status      \n
       \t -w,--word \t Show line/word changes in detail \n
       \t -h,--help \t Display help/usage               \n\n
-    PARAMS\n
-      \t -b1 <branch> \t Name of source branch (default: main)    \n
-      \t -b1 <branch> \t Name of target branch (default: current) \n"
+    PARAMS       \n
+      \t -b1 <branch> \t Name of source branch (default: $GIT_ROOT) \n
+      \t -b1 <branch> \t Name of target branch (default: current)   \n"
 }

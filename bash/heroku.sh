@@ -1,6 +1,6 @@
 # Heroku aliases
-alias hp='gp heroku master'
-alias hpp='gp production master'
+alias hp="gp heroku $GIT_ROOT"
+alias hpp="gp production $GIT_ROOT"
 
 # Heroku CLI
 alias hero='heroku'
